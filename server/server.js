@@ -12,21 +12,19 @@ app.use(bodyParser.urlencoded({
 // parse application/json
 app.use(bodyParser.json())
 
-app.route('/usuario/:id', )
-     .get((req, res) => {
+app.get('/usuario', (req, res) => {
+     res.json('Get Usuario')
+})
 
-          res.json('Get Usuario')
+app.put('/usuario/:id', (req, res) => {
+     let id = req.params.id
+     res.json({
+          id
      })
-
-     .put((req, res) => {
-          let id = req.params.id
-          res.json({
-               id
-          })
-     })
-     .delete((req, res) => {
-          res.json('Get delete')
-     })
+})
+app.delete('/usuario', (req, res) => {
+     res.json('Get delete')
+})
 
 app.post('/usuario', (req, res) => {
      let data = req.body
